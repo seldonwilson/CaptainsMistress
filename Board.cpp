@@ -9,7 +9,7 @@ filename: Board.cpp
 Board::Board() : Board(7, 6) {}
 
 Board::Board(int numRows, int numCols) :
-   board(numRows, vector<cellState>(numCols, cellState::blank)) {}
+   board(numRows, std::vector<cellState>(numCols, cellState::blank)) {}
 
 int Board::getNumRows() const {
    return board.size();
