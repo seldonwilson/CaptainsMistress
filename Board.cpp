@@ -9,8 +9,17 @@ filename: Board.cpp
 
 Board::Board() : Board(7, 6) {}
 
-Board::Board(int _numRows, int _numCols) :
-   numRows(_numRows),
-   numCols(_numCols),
-   board(_numRows, vector<cellState>(_numCols, cellState::blank)) {}
+Board::Board(int numRows, int numCols) :
+   board(numRows, vector<cellState>(numCols, cellState::blank)) {}
 
+int Board::getNumRows() const {
+   return board.size();
+}
+
+int Board::getNumCols() const {
+   return board.at(0).size();
+}
+
+cellState Board::getCell(int row, int col) const {
+   return board.at(row).at(col);
+}

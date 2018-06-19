@@ -15,18 +15,16 @@ enum class cellState {token1, token2, blank};
 class Board {
    public:
       Board();
-      Board(int _numRows, int _numCols);
+      Board(int numRows, int numCols);
 
       void placeToken(cellState token, int row, int col);
-      // overloaded subscript
-
+      int getNumRows() const;
+      int getNumCols() const;
+      cellState getCell(int row, int col) const;
 
    private:
-      int numRows;
-      int numCols;
       vector<vector<cellState>> board;
 };
-
 
 
 #endif // BOARD_HPP
