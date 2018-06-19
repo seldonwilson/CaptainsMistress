@@ -6,7 +6,11 @@ filename: Board.hpp
 #ifndef BOARD_HPP_
 #define BOARD_HPP_
 
-enum class cellState {X, O, Blank};
+#include <vector>
+
+using std::vector;
+
+enum class cellState {token1, token2, blank};
 
 class Board {
    public:
@@ -14,14 +18,13 @@ class Board {
       Board(int _numRows, int _numCols);
 
       void placeToken(cellState token, int row, int col);
-      const char** getBoard() const;
       // overloaded subscript
 
 
    private:
-      char** board;
       int numRows;
       int numCols;
+      vector<vector<cellState>> board;
 };
 
 
