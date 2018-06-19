@@ -6,7 +6,6 @@ filename: Board.cpp
 #include "Board.hpp"
 
 
-
 Board::Board() : Board(7, 6) {}
 
 Board::Board(int numRows, int numCols) :
@@ -22,4 +21,8 @@ int Board::getNumCols() const {
 
 cellState Board::getCell(int row, int col) const {
    return board.at(row).at(col);
+}
+
+void Board::placeToken(cellState token, int row, int col) {
+   board[row][col] = token;
 }

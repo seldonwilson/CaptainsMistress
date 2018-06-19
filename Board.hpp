@@ -8,22 +8,24 @@ filename: Board.hpp
 
 #include <vector>
 
-using std::vector;
-
 enum class cellState {token1, token2, blank};
 
 class Board {
    public:
+         // Constructors
       Board();
       Board(int numRows, int numCols);
 
-      void placeToken(cellState token, int row, int col);
+         // Getters
       int getNumRows() const;
       int getNumCols() const;
       cellState getCell(int row, int col) const;
 
+         // Mutators
+      void placeToken(cellState token, int row, int col);
+
    private:
-      vector<vector<cellState>> board;
+      std::vector<std::vector<cellState>> board;
 };
 
 
