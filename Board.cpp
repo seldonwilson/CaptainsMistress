@@ -6,7 +6,7 @@ filename: Board.cpp
 #include "Board.hpp"
 
 
-Board::Board() : Board(7, 6) {}
+Board::Board() : Board(6, 7) {}
 
 Board::Board(int numRows, int numCols) :
    board(numRows, std::vector<cellState>(numCols, cellState::blank)) {}
