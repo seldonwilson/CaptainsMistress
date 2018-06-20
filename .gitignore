@@ -33,3 +33,6 @@
 
 # Executable filename
 cap
+
+# Bad Apples
+.DS_Store
