@@ -1,7 +1,7 @@
 cap: main.o Board.o TextOutput.o
 	g++ -std=c++14 -o cap main.o Board.o TextOutput.o
 
-main.o: main.cpp Board.hpp TextOutput.cpp TextOutput.hpp
+main.o: main.cpp 
 	g++ -std=c++14 -Wextra -Wall -pedantic -c main.cpp
 
 Board.o: Board.cpp Board.hpp
@@ -9,3 +9,6 @@ Board.o: Board.cpp Board.hpp
 
 TextOutput.o: TextOutput.cpp TextOutput.hpp
 	g++ -std=c++14 -Wextra -Wall -pedantic -c TextOutput.cpp
+
+clean: 
+	rm *.o cap
