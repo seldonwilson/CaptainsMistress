@@ -1,0 +1,25 @@
+   // If col is full (false) otherwise (true)
+   // out of range issues handled 
+bool isColFull(board, col) {
+   return true/false
+}
+
+void getPlacedTokenLocation
+
+
+
+Input Class
+
+
+   // row and col 
+GameLogic Class
+- if a token can go in a given column?
+- if a given move won the game?
+
+- bool isColFull(board, col)
+- bool isHorizontalWin(board, row, col)
+- bool isVerticalWin(board, row, col)
+- bool isDiagonalWin(board, row, col) // redundant?
+- bool isDiagonalWinNE(board, row, col)
+- bool isDiagonalWinNW(board, row, col)
+- bool isWin(board, row, col)
