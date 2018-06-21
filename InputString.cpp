@@ -1,6 +1,7 @@
 #include "InputString.hpp"
 
 using std::string;
+using std::stoi;
 
 InputString::InputString(string _input) {
    input = _input;
@@ -9,7 +10,7 @@ InputString::InputString(string _input) {
    // Returns true if input can represent a value in the range of an int
 bool InputString::isInt() const {
    try {
-       std::stoi(input);
+       stoi(input);
        return true;
    } catch (...) {
       return false;
@@ -21,7 +22,7 @@ bool InputString::isIntInRange(int low, int high) const {
    if (!isInt()) {
       return false;
    } else {
-      int myInt = std::stoi(input);
+      int myInt = stoi(input);
 
       if (myInt >= low && myInt <= high) {
          return true;
@@ -29,4 +30,10 @@ bool InputString::isIntInRange(int low, int high) const {
          return false;
       }
    }
+}
+
+
+   // WARNING! User must ensure input can represent int before calling
+int InputString::asInt() const {
+   return stoi(input);
 }
