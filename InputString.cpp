@@ -6,6 +6,7 @@ InputString::InputString(string _input) {
    input = _input;
 }
 
+   // Returns true if input can represent a value in the range of an int
 bool InputString::isInt() const {
    try {
        std::stoi(input);
@@ -15,6 +16,7 @@ bool InputString::isInt() const {
    }
 }
 
+   // Returns true if input can represent an integer in range [low, high]
 bool InputString::isIntInRange(int low, int high) const {
    if (!isInt()) {
       return false;
