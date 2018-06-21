@@ -19,6 +19,12 @@ bool InputString::isIntInRange(int low, int high) const {
    if (!isInt()) {
       return false;
    } else {
-      return true;
+      int myInt = std::stoi(input);
+
+      if (myInt >= low && myInt <= high) {
+         return true;
+      } else {
+         return false;
+      }
    }
 }
