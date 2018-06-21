@@ -22,6 +22,7 @@ class InputString {
          // IsType Methods
       bool isInt() const;
       bool isIntInRange(int low, int high) const;
+      int  asInt() const;
 
    private:
       std::string input;
