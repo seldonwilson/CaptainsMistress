@@ -8,7 +8,8 @@ using std::cout;
 using std::endl;
 
 int main() {
-   cellState tokenToTest = cellState::token1;
+   cellState tokenToTest = cellState::token2;
+
    Board board;
       // test horizontal wins
    board.placeToken(tokenToTest, 5, 0);
@@ -16,8 +17,8 @@ int main() {
    board.placeToken(tokenToTest, 5, 2);
    board.placeToken(tokenToTest, 5, 3);
    board.placeToken(tokenToTest, 5, 4);
-   //board.placeToken(cellState::token1, 5, 5);
-   board.placeToken(cellState::token1, 5, 6);
+   //board.placeToken(tokenToTest, 5, 5);
+   board.placeToken(tokenToTest, 5, 6);
 
    cout << endl;
    TextOutput::printBoard(board);
@@ -61,6 +62,8 @@ int main() {
    cout << endl;
    TextOutput::printBoard(board2);
    cout << endl;
+
+
 
    return 0;
 }

@@ -29,9 +29,45 @@ using std::cout;
 using std::endl;
 
 namespace GameLogic {
-
+      // checks for wins on the diagonal up and to the right, and down and to the left
    bool isDiagonalWinNE(const Board & brd, int row, int col) {
-      return false;
+      int numConsecTokens = 1;
+      cellState thisToken = brd.getCell(row, col);
+         // after testing, remove line below
+      if(thisToken == cellState::blank) return false;
+         // look up, and to the right (check at most 3 cells, 
+         // but not above row 0 or right of rightmost column)
+      int thisRow = row - 1;
+      int thisCol = col + 1;
+      int numCellsChecked = 0;
+      while(thisRow >= 0 && thisCol < brd.getNumCols() && numCellsChecked < 3) {
+         if(brd.getCell(thisRow, thisCol) == thisToken) {
+            numConsecTokens++;
+            thisRow -= 1;
+            thisCol += 1;
+            numCellsChecked++;
+         } else {
+            break;
+         }
+      }
+
+         // look down, and to the left (check at most 3 cells, 
+         // but not below last/bottom row or left of column 0)
+      int thisRow = row + 1;
+      int thisCol = col - 1;
+      int numCellsChecked = 0;
+      while(thisRow < brd.getNumRows() && thisCol >= 0 && numCellsChecked < 3) {
+         if(brd.getCell(thisRow, thisCol) == thisToken) {
+            numConsecTokens++;
+            thisRow += 1;
+            thisCol -= 1;
+            numCellsChecked++;
+         } else {
+            break;
+         }
+      }
+
+      return numConsecTokens > 3;
    }
 
    bool isDiagonalWinNW(const Board & brd, int row, int col) {
@@ -45,12 +81,12 @@ namespace GameLogic {
 
    bool isVerticalWin(const Board & brd, int row, int col) {
       int numConsecTokens = 1;
-      int rowsChecked = 0;
-      int thisRow = row + 1;
       cellState thisToken = brd.getCell(row, col);
          // after testing, remove line below
       if(thisToken == cellState::blank) return false;
          // look down (go at most 3 cells down, but not below last/bottom row)
+      int thisRow = row + 1;
+      int rowsChecked = 0;
       while(thisRow < brd.getNumRows()  && rowsChecked < 3) {
          if(brd.getCell(thisRow, col) == thisToken) {
             numConsecTokens++;
@@ -61,9 +97,9 @@ namespace GameLogic {
          }
       }
 
+         // look up (go at most 3 cells up, but not above row 0)
       thisRow = row - 1;
       rowsChecked = 0;
-         // look up (go at most 3 cells up, but not above row 0)
       while(thisRow >= 0 && rowsChecked < 3) {
          if(brd.getCell(thisRow, col) == thisToken) {
             numConsecTokens++;
