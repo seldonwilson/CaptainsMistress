@@ -31,6 +31,8 @@ namespace GameLogic {
       int rowsChecked = 0;
       int thisRow = row + 1;
       cellState thisToken = brd.getCell(row, col);
+         // after testing, remove line below
+      if(thisToken == cellState::blank) return false;
          // look down (go at most 3 cells down, but not below row 5)
       while(thisRow <= 5 && rowsChecked < 3) {
          if(brd.getCell(thisRow, col) == thisToken) {
@@ -42,14 +44,14 @@ namespace GameLogic {
          }
       }
 
-      thisRow = col - 1;
+      thisRow = row - 1;
       rowsChecked = 0;
          // look up (go at most 3 cells up, but not above row 0)
-      while(thisCol >= 0 && colsChecked < 3) {
+      while(thisRow >= 0 && rowsChecked < 3) {
          if(brd.getCell(thisRow, col) == thisToken) {
             numConsecTokens++;
-            thisCol -= 1;
-            colsChecked++;
+            thisRow -= 1;
+            rowsChecked++;
          } else {
             break;
          }
@@ -62,6 +64,8 @@ namespace GameLogic {
       int colsChecked = 0;
       int thisCol = col - 1;
       cellState thisToken = brd.getCell(row, col);
+         // after testing, remove line below
+      if(thisToken == cellState::blank) return false;
          // look left (go at most 3 cells left, but not left of column 0)
       while(thisCol >= 0 && colsChecked < 3) {
          if(brd.getCell(row, thisCol) == thisToken) {
