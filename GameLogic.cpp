@@ -5,6 +5,16 @@ filename: GameLogic.cpp
 
 #include "GameLogic.hpp"
 
+/** Danny's suggesstions **
+- Using Board.getNumRows() and Board.getNumCols() would make this code more generic
+  and work with different sized board instead of hardcoding values like 5 and 6.
+
+- I still don't understand why we need rowsChecked and numConsecTokens. Don't we want
+  to end the checks right when numConsecTokens is 4?
+
+**/
+
+
 // delete later
 #include <iostream>
 
