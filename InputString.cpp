@@ -2,6 +2,7 @@
 
 using std::string;
 using std::stoi;
+using std::to_string;
 
 InputString::InputString(string _input) {
    input = _input;
@@ -10,8 +11,14 @@ InputString::InputString(string _input) {
    // Returns true if input can represent a value in the range of an int
 bool InputString::isInt() const {
    try {
-       stoi(input);
-       return true;
+       int num = stoi(input);
+
+          // If # of digits in num == input.length(), true. Else, false.
+       if (to_string(num).length() == input.length()) {
+          return true;
+       } else {
+          return false;
+       }
    } catch (...) {
       return false;
    }
