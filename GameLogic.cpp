@@ -18,6 +18,10 @@ filename: GameLogic.cpp
       care about checking (in any/all of the directions - horiz, vert, diag) all the way
       to the edge, then it seems like we don't need rowsChecked/colsChecked, only 
       numConsecTokens
+- Duh... disregard above comment. Yes, you're right Danny. For some reason I was thinking 
+  we were still checking to the edge, but we'll only keep checking (stay in the while loop)
+  while we continue to get the same consecutive tokens, and we only ever need 4 of these. So
+  I think you're right. We'll test when we meet next
 
 **/
 
