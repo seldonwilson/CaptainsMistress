@@ -9,6 +9,7 @@ filename: GameLogic.hpp
 
 namespace GameLogic {
 
+   void testThis();
 
 }
 
