@@ -13,7 +13,6 @@ namespace GameLogic {
 
       // did a given move win the game?
    bool isWin(const Board & brd, int row, int col);
-
 }
 
 
