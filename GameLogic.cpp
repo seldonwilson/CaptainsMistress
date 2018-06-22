@@ -35,38 +35,34 @@ namespace GameLogic {
       int colsChecked = 0;
       int thisCol = col-1;
       cellState thisToken = brd.getCell(row, col);
-         // look left (go up to 3 spaces left while ensuring we do not go left of column 0)
-      while(thisCol >= 0 && colsChecked < 4) {
+         // look left (go up to 3 spaces left while not going left of column 0)
+      while(thisCol >= 0 && colsChecked < 3) {
          if(brd.getCell(row, thisCol) == thisToken) {
             numConsecTokens++;
             thisCol -= 1;
             colsChecked++;
-            cout << "numConsecTokens = " << numConsecTokens << endl;
+            //cout << "numConsecTokens = " << numConsecTokens << endl;
          } else {
-            cout << "Breaking!" << endl;
+            //cout << "Breaking!" << endl;
             break;
          }
       }
 
       thisCol = col + 1;
       colsChecked = 0;
-      // look right (go up to 3 spaces right while ensuring we do not go right of column 6)
-      while(thisCol <= 6 && colsChecked < 4) {
+         // look right (go up to 3 spaces right while not going right of column 6)
+      while(thisCol <= 6 && colsChecked < 3) {
          if(brd.getCell(row, thisCol) == thisToken) {
             numConsecTokens++;
-            thisCol -= 1;
+            thisCol += 1;
             colsChecked++;
-            cout << "numConsecTokens = " << numConsecTokens << endl;
+            //cout << "numConsecTokens = " << numConsecTokens << endl;
          } else {
-            cout << "Breaking!" << endl;
+            //cout << "Breaking!" << endl;
             break;
          }
       }
-
-
-
       return numConsecTokens > 3;
-
    }
 
    bool isWin(const Board & brd, int row, int col) {
