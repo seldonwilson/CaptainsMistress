@@ -53,9 +53,9 @@ namespace GameLogic {
 
          // look down, and to the left (check at most 3 cells, 
          // but not below last/bottom row or left of column 0)
-      int thisRow = row + 1;
-      int thisCol = col - 1;
-      int numCellsChecked = 0;
+      thisRow = row + 1;
+      thisCol = col - 1;
+      numCellsChecked = 0;
       while(thisRow < brd.getNumRows() && thisCol >= 0 && numCellsChecked < 3) {
          if(brd.getCell(thisRow, thisCol) == thisToken) {
             numConsecTokens++;
