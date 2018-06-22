@@ -154,13 +154,16 @@ namespace GameLogic {
              isVerticalWin(brd, row, col) ||
              isDiagonalWin(brd, row, col);
    }
-}
+      // - bool isColFull(board, col)
+   bool isColFull(const Board & brd, int col) {
+      for(int i = 0; i < brd.getNumRows(); i++) {
+         if(brd.getCell(i, col) == cellState::blank) {
+            return false;
+         }
+      }
+      return true;
+   }
 
 
-
-// GameLogic Class
-// - if a token can go in a given column?
-// - bool isColFull(board, col)
-
-
+} // end of namespace
 

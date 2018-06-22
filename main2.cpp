@@ -34,12 +34,19 @@ int main() {
 
    Board board1;
       // test vertical wins
-   //board1.placeToken(tokenToTest, 0, 0);
-   //board1.placeToken(tokenToTest, 1, 0);
+   board1.placeToken(tokenToTest, 0, 0);
+   board1.placeToken(tokenToTest, 1, 0);
    board1.placeToken(tokenToTest, 2, 0);
    board1.placeToken(tokenToTest, 3, 0);
    board1.placeToken(tokenToTest, 4, 0);
    board1.placeToken(tokenToTest, 5, 0);
+
+   board1.placeToken(tokenToTest, 0, 6);
+   board1.placeToken(tokenToTest, 1, 6);
+   board1.placeToken(tokenToTest, 2, 6);
+   board1.placeToken(tokenToTest, 3, 6);
+   board1.placeToken(tokenToTest, 4, 6);
+   board1.placeToken(tokenToTest, 5, 6);
 
    cout << endl;
    TextOutput::printBoard(board1);
@@ -52,10 +59,21 @@ int main() {
    cout << "4, 0: " << GameLogic::isWin(board1, 4, 0) << endl;
    cout << "5, 0: " << GameLogic::isWin(board1, 5, 0) << endl;
 
+   cout << endl;
+   cout << "col 0: " << GameLogic::isColFull(board1, 0) << endl;
+   cout << "col 1: " << GameLogic::isColFull(board1, 1) << endl;
+   cout << "col 2: " << GameLogic::isColFull(board1, 2) << endl;
+   cout << "col 3: " << GameLogic::isColFull(board1, 3) << endl;
+   cout << "col 4: " << GameLogic::isColFull(board1, 4) << endl;
+   cout << "col 5: " << GameLogic::isColFull(board1, 5) << endl;
+   cout << "col 6: " << GameLogic::isColFull(board1, 6) << endl;
+
+
+
    Board board2;
       // test diagonal wins NE (up and to the right, and down and to the left)
    board2.placeToken(tokenToTest, 5, 0);
-   //board2.placeToken(tokenToTest, 5, 1);
+   board2.placeToken(tokenToTest, 5, 1);
    board2.placeToken(tokenToTest, 4, 1);
    board2.placeToken(tokenToTest, 4, 2);
    board2.placeToken(tokenToTest, 3, 3);
