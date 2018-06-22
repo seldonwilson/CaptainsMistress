@@ -8,9 +8,16 @@ filename: GameLogic.cpp
 /** Danny's suggesstions **
 - Using Board.getNumRows() and Board.getNumCols() would make this code more generic
   and work with different sized board instead of hardcoding values like 5 and 6.
+- Coop's response: I agree - I updated the methods per your suggestions
 
 - I still don't understand why we need rowsChecked and numConsecTokens. Don't we want
-  to end the checks right when numConsecTokens is 4?
+  to end the checks right when numConsecTokens is 4? 
+- Coop's thoughts about why he initially included rowsChecked: 
+      Do we want to keep checking for wins all the way to the edge of the 2D array? Or
+      do we only want to check for wins resulting from placing this token? If we don't
+      care about checking (in any/all of the directions - horiz, vert, diag) all the way
+      to the edge, then it seems like we don't need rowsChecked/colsChecked, only 
+      numConsecTokens
 
 **/
 
@@ -43,8 +50,8 @@ namespace GameLogic {
       cellState thisToken = brd.getCell(row, col);
          // after testing, remove line below
       if(thisToken == cellState::blank) return false;
-         // look down (go at most 3 cells down, but not below row 5)
-      while(thisRow <= 5 && rowsChecked < 3) {
+         // look down (go at most 3 cells down, but not below last/bottom row)
+      while(thisRow < brd.getNumRows()  && rowsChecked < 3) {
          if(brd.getCell(thisRow, col) == thisToken) {
             numConsecTokens++;
             thisRow += 1;
@@ -89,8 +96,8 @@ namespace GameLogic {
 
       thisCol = col + 1;
       colsChecked = 0;
-         // look right (go up to 3 cells right, but not right of column 6)
-      while(thisCol <= 6 && colsChecked < 3) {
+         // look right (go up to 3 cells right, but not right of rightmost column)
+      while(thisCol < brd.getNumCols() && colsChecked < 3) {
          if(brd.getCell(row, thisCol) == thisToken) {
             numConsecTokens++;
             thisCol += 1;

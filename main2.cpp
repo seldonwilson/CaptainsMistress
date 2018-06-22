@@ -8,14 +8,15 @@ using std::cout;
 using std::endl;
 
 int main() {
+   cellState tokenToTest = cellState::token1;
    Board board;
       // test horizontal wins
-   board.placeToken(cellState::token1, 5, 0);
-   board.placeToken(cellState::token1, 5, 1);
-   board.placeToken(cellState::token1, 5, 2);
-   //board.placeToken(cellState::token1, 5, 3);
-   board.placeToken(cellState::token1, 5, 4);
-   board.placeToken(cellState::token1, 5, 5);
+   board.placeToken(tokenToTest, 5, 0);
+   board.placeToken(tokenToTest, 5, 1);
+   board.placeToken(tokenToTest, 5, 2);
+   board.placeToken(tokenToTest, 5, 3);
+   board.placeToken(tokenToTest, 5, 4);
+   //board.placeToken(cellState::token1, 5, 5);
    board.placeToken(cellState::token1, 5, 6);
 
    cout << endl;
@@ -32,12 +33,12 @@ int main() {
 
    Board board1;
       // test vertical wins
-   //board1.placeToken(cellState::token1, 0, 0);
-   //board1.placeToken(cellState::token1, 1, 0);
-   board1.placeToken(cellState::token1, 2, 0);
-   board1.placeToken(cellState::token1, 3, 0);
-   board1.placeToken(cellState::token1, 4, 0);
-   board1.placeToken(cellState::token1, 5, 0);
+   //board1.placeToken(tokenToTest, 0, 0);
+   //board1.placeToken(tokenToTest, 1, 0);
+   board1.placeToken(tokenToTest, 2, 0);
+   board1.placeToken(tokenToTest, 3, 0);
+   board1.placeToken(tokenToTest, 4, 0);
+   board1.placeToken(tokenToTest, 5, 0);
 
    cout << endl;
    TextOutput::printBoard(board1);
@@ -49,6 +50,17 @@ int main() {
    cout << "3, 0: " << GameLogic::isWin(board1, 3, 0) << endl;
    cout << "4, 0: " << GameLogic::isWin(board1, 4, 0) << endl;
    cout << "5, 0: " << GameLogic::isWin(board1, 5, 0) << endl;
+
+   Board board2;
+      // test diagonal wins NE (up and to the right, and down and to the left)
+   board2.placeToken(tokenToTest, 3, 3);
+   board2.placeToken(tokenToTest, 2, 4);
+   board2.placeToken(tokenToTest, 1, 5);
+   board2.placeToken(tokenToTest, 0, 6);
+
+   cout << endl;
+   TextOutput::printBoard(board2);
+   cout << endl;
 
    return 0;
 }
