@@ -164,6 +164,15 @@ namespace GameLogic {
       return true;
    }
 
+      // this function assumes a valid column from user
+   void placeToken(Board & brd, cellState currToken, int col) {
+      int rowIndex = brd.getNumRows() - 1; 
+      while(brd.getCell(rowIndex, col) != cellState::blank) {
+         rowIndex--;
+      }
+      brd.placeToken(currToken, rowIndex, col);
+   }
+
 
 } // end of namespace
 

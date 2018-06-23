@@ -15,9 +15,9 @@ int main() {
    board.placeToken(tokenToTest, 5, 0);
    board.placeToken(tokenToTest, 5, 1);
    board.placeToken(tokenToTest, 5, 2);
-   board.placeToken(tokenToTest, 5, 3);
+   //board.placeToken(tokenToTest, 5, 3);
    board.placeToken(tokenToTest, 5, 4);
-   //board.placeToken(tokenToTest, 5, 5);
+   board.placeToken(tokenToTest, 5, 5);
    board.placeToken(tokenToTest, 5, 6);
 
    cout << endl;
@@ -32,6 +32,8 @@ int main() {
    cout << "5, 5: " << GameLogic::isWin(board, 5, 5) << endl;
    cout << "5, 6: " << GameLogic::isWin(board, 5, 6) << endl;
 
+
+
    Board board1;
       // test vertical wins
    board1.placeToken(tokenToTest, 0, 0);
@@ -41,12 +43,27 @@ int main() {
    board1.placeToken(tokenToTest, 4, 0);
    board1.placeToken(tokenToTest, 5, 0);
 
+   GameLogic::placeToken(board1, tokenToTest, 4);
+   GameLogic::placeToken(board1, tokenToTest, 4);
+   GameLogic::placeToken(board1, tokenToTest, 4);
+   GameLogic::placeToken(board1, tokenToTest, 4);
+   GameLogic::placeToken(board1, tokenToTest, 4);
+   GameLogic::placeToken(board1, tokenToTest, 4);   
+
+   GameLogic::placeToken(board1, tokenToTest, 5);
+   GameLogic::placeToken(board1, tokenToTest, 5);
+   GameLogic::placeToken(board1, tokenToTest, 5);
+   GameLogic::placeToken(board1, tokenToTest, 5);
+   GameLogic::placeToken(board1, tokenToTest, 5);
+   GameLogic::placeToken(board1, tokenToTest, 5);
+
    board1.placeToken(tokenToTest, 0, 6);
    board1.placeToken(tokenToTest, 1, 6);
    board1.placeToken(tokenToTest, 2, 6);
    board1.placeToken(tokenToTest, 3, 6);
    board1.placeToken(tokenToTest, 4, 6);
    board1.placeToken(tokenToTest, 5, 6);
+
 
    cout << endl;
    TextOutput::printBoard(board1);
@@ -59,7 +76,18 @@ int main() {
    cout << "4, 0: " << GameLogic::isWin(board1, 4, 0) << endl;
    cout << "5, 0: " << GameLogic::isWin(board1, 5, 0) << endl;
 
-   cout << endl;
+   cout << "0, 1: " << GameLogic::isWin(board1, 0, 1) << endl;
+   cout << "0, 2: " << GameLogic::isWin(board1, 0, 2) << endl;
+   cout << "0, 3: " << GameLogic::isWin(board1, 0, 3) << endl;
+   cout << "0, 4: " << GameLogic::isWin(board1, 0, 4) << endl;
+   cout << "0, 5: " << GameLogic::isWin(board1, 0, 5) << endl;
+   cout << "0, 6: " << GameLogic::isWin(board1, 0, 6) << endl;
+
+
+
+
+
+
    cout << "col 0: " << GameLogic::isColFull(board1, 0) << endl;
    cout << "col 1: " << GameLogic::isColFull(board1, 1) << endl;
    cout << "col 2: " << GameLogic::isColFull(board1, 2) << endl;
@@ -67,6 +95,11 @@ int main() {
    cout << "col 4: " << GameLogic::isColFull(board1, 4) << endl;
    cout << "col 5: " << GameLogic::isColFull(board1, 5) << endl;
    cout << "col 6: " << GameLogic::isColFull(board1, 6) << endl;
+
+
+
+
+
 
 
 
@@ -80,6 +113,7 @@ int main() {
    board2.placeToken(tokenToTest, 2, 4);
    //board2.placeToken(tokenToTest, 1, 5);
    //board2.placeToken(tokenToTest, 0, 6);
+
 
    cout << endl;
    TextOutput::printBoard(board2);
