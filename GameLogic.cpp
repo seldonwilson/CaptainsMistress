@@ -5,11 +5,6 @@ filename: GameLogic.cpp
 
 #include "GameLogic.hpp"
 
-// delete 3 lines below after testing 
-#include <iostream>
-using std::cout;
-using std::endl;
-
 namespace GameLogic {
 
       // checks for wins on the diagonal up and to the right, and down and to the left
