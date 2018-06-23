@@ -36,3 +36,7 @@ cap
 
 # Bad Apples
 .DS_Store
+
+# Testing Drivers
+main2.cpp
+main3.cpp
