@@ -25,7 +25,7 @@ class Board {
       void placeToken(cellState token, int row, int col);
 
    private:
-      std::vector<std::vector<cellState> > board;
+      std::vector<std::vector<cellState>> board;
 };
 
 

@@ -1,7 +1,7 @@
 cap: main3.o Board.o TextOutput.o GameLogic.o
 	g++ -std=c++14 -o cap main3.o Board.o TextOutput.o GameLogic.o
 
-main2.o: main3.cpp 
+main3.o: main3.cpp 
 	g++ -std=c++14 -Wextra -Wall -pedantic -c main3.cpp
 
 Board.o: Board.cpp Board.hpp
