@@ -17,7 +17,3 @@ namespace GameLogic {
 }
 
 #endif // GAME_LOGIC_HPP_
-
-
-
-
