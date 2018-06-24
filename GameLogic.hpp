@@ -14,8 +14,6 @@ namespace GameLogic {
    bool isWin(const Board & brd, int row, int col);
    bool isColFull(const Board & brd, int col);
    void placeToken(Board & brd, cellState currToken, int col);
- 
- 
 }
 
 #endif // GAME_LOGIC_HPP_
